@@ -21,3 +21,6 @@ export const navSlice = createSlice({
         },
     },
 })
+
+// destructure - this line enables the rest of the app to access these objects
+export const { setOrigin, setDestination, setTravelTimeInformation } = navSlice.actions
