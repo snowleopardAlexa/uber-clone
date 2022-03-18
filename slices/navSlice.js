@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const initialStore = {
+const initialState = {
     origin: null,
     destination: null,
     travelTimeInformation: null
