@@ -6,7 +6,7 @@ import tw from "tailwind-react-native-classnames"
 const HomeScreen = () => {
   return (
     <SafeAreaView>
-      <Text style={tw`text-red-500 p-10`}>I am a home screen</Text>
+      <Text style={[tw`text-red-500 p-10`], styles.text}>I am a home screen</Text>
     </SafeAreaView>
   )
 }
@@ -14,4 +14,7 @@ const HomeScreen = () => {
 export default HomeScreen
 
 const styles = StyleSheet.create({
+    text: {
+        color: "blue"
+    }
 })
