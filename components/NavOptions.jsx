@@ -27,7 +27,7 @@ const NavOptions = () => {
        <TouchableOpacity>
         <View>
             <Image 
-                style={{width: 120, height: 120, resizeMode: "contain"}}
+                style={{width: 100, height: 100, resizeMode: "contain"}}
                 source={item.image}
             />
         </View>
