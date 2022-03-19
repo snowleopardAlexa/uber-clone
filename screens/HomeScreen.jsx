@@ -1,12 +1,17 @@
 import React from 'react'
-import { StyleSheet, Text, SafeAreaView } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native'
 import tw from "tailwind-react-native-classnames"
 
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView>
-      <Text style={[tw`text-red-500 p-10`], {color: "purple"}}>I am a home screen</Text>
+    <SafeAreaView style={tw `bg-white h-full`}>
+      <View>
+        <Image 
+          style={{width: 100, height: 100, resizeMode: "contain"}}
+          source={require('../assets/uber.png')}
+        />
+      </View>
     </SafeAreaView>
   )
 }
