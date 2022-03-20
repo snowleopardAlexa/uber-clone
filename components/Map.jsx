@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { StyleSheet } from 'react-native'
 import MapView, { Marker } from 'react-native-maps'
 import { GOOGLE_MAPS_APIKEY } from '@env'
@@ -12,6 +12,12 @@ const Map = () => {
 const origin = useSelector(selectOrigin)
 const destination = useSelector(selectDestination)
 const mapRef = useRef(null)
+
+useEffect(() => {
+  if (!origin || !destination) return;
+  // zoom & fit to markers
+  mapRef.current.fitToSuppliedMarkers(['origin', 'destination'])
+}, [origin, destination])
 
   return (
     <MapView
