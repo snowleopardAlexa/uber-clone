@@ -18,7 +18,7 @@ function App() {
     <Provider store={store}>
       <SafeAreaProvider>
         <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{ headerShown: false}} >
           <Stack.Screen 
             name="HomeScreen"
             component={HomeScreen}
