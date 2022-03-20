@@ -50,6 +50,7 @@ const dispatch = useDispatch()
           nearbyPlacesAPI="GooglePlacesSearch"
           debounce={400}
         />
+        
         <NavOptions />
       </View>
     </SafeAreaView>

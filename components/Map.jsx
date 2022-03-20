@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { StyleSheet } from 'react-native'
 import MapView, { Marker } from "react-native-maps"
 import tw from 'tailwind-react-native-classnames'
 import { selectOrigin } from '../slices/navSlice'
@@ -14,7 +14,7 @@ const origin = useSelector(selectOrigin)
       style={tw `flex-1`}
       mapType="mutedStandard"
       initialRegion={{
-          latitude: origin.location.lat,
+          latitude: 37.78825,
           longitude: origin.location.lng,
           latitudeDelta: 0.005,
           longitudeDelta: 0.005,
