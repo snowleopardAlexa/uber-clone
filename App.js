@@ -1,37 +1,34 @@
+import 'react-native-gesture-handler'
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { Provider } from "react-redux"
 import HomeScreen from './screens/HomeScreen';
 import MapScreen from './screens/MapScreen';
 import { store } from "./store"
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-//import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-
-
-export default function App() {
-
 const Stack = createStackNavigator()
+
+function App() {
 
   return (
     <Provider store={store}>
-       <NavigationContainer>
-        <SafeAreaProvider>
-        <Stack.Navigator screenOptions={{ headerShown: false}}>
+      <SafeAreaProvider>
+        <NavigationContainer>
+        <Stack.Navigator>
           <Stack.Screen 
             name="HomeScreen"
             component={HomeScreen}
           />
-           <Stack.Screen 
+          <Stack.Screen 
             name="MapScreen"
             component={MapScreen}
           />
         </Stack.Navigator>
-        <HomeScreen />
+        </NavigationContainer>
         </SafeAreaProvider>
-      </NavigationContainer>
     </Provider>
   );
 }
@@ -44,3 +41,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App
