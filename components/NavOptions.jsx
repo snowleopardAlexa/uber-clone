@@ -7,17 +7,18 @@ import { useNavigation } from '@react-navigation/native'
 
 const data = [
     {
-        id: "123",
+        id: "1",
         title: "Get a ride",
         image: require('../assets/car.png'),
         screen: "MapScreen",
     },
     {
-        id: "456",
-        title: "Order food",
+        id: "2",
+        title: "Order Food",
         image: require('../assets/salad.png'),
         screen: "EatsScreen",
-    }
+    },
+  
 ]
 
 const NavOptions = () => {
