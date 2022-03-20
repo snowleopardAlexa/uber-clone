@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, SafeAreaView, Image, Button } from 'react-nativ
 import React from 'react'
 import tw from "tailwind-react-native-classnames"
 
-const EatsScreen = () => {
+const EatsScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={tw `bg-white h-full`}>
     <View style={tw `flex items-center m-auto`}>
@@ -15,6 +15,7 @@ const EatsScreen = () => {
     </View>
     <View style={tw `bg-black p-2 w-40 rounded mx-auto`}>
     <Button
+     onPress={() => navigation.goBack()}
      title="GO BACK"
      color="#fff"
     />      
