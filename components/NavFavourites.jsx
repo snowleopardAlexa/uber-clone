@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { FlatList } from 'react-native-gesture-handler'
 
 const data = [
     {
@@ -18,9 +19,15 @@ const data = [
 
 const NavFavourites = () => {
   return (
-    <View>
-      <Text>NavFavourites</Text>
-    </View>
+    <FlatList 
+      data={data}
+      keyExtractor={(item) => item.id}
+      renderItem={({ item }) => (
+          <TouchableOpacity>
+              <Text>Hello</Text>
+          </TouchableOpacity>
+      )}
+    />
   )
 }
 
