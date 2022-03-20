@@ -8,6 +8,7 @@ import { store } from "./store"
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import EatsScreen from './screens/EatsScreen';
 
 const Stack = createStackNavigator()
 
@@ -25,6 +26,10 @@ function App() {
           <Stack.Screen 
             name="MapScreen"
             component={MapScreen}
+          />
+           <Stack.Screen 
+            name="EatsScreen"
+            component={EatsScreen}
           />
         </Stack.Navigator>
         </NavigationContainer>
