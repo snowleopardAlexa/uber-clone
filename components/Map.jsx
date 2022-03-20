@@ -3,6 +3,7 @@ import React from 'react'
 import MapView, { Marker } from "react-native-maps"
 import tw from 'tailwind-react-native-classnames'
 import { selectOrigin } from '../slices/navSlice'
+import { useSelector } from 'react-redux'
 
 const Map = () => {
   
