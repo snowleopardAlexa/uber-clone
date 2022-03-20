@@ -2,6 +2,8 @@ import React from 'react'
 import { StyleSheet, View, SafeAreaView, Image } from 'react-native'
 import tw from "tailwind-react-native-classnames"
 import NavOptions from '../components/NavOptions'
+import { GOOGLE_MAPS_APIKEY } from "@env"
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 
 
 const HomeScreen = () => {
@@ -13,6 +15,11 @@ const HomeScreen = () => {
           source={require('../assets/uber.png')}
         />
 
+        <GooglePlacesAutocomplete
+         placeholder="Where From?" 
+         nearbyPlacesAPI="GooglePlacesSearch"
+         debounce={400}
+        />
         <NavOptions />
       </View>
     </SafeAreaView>
