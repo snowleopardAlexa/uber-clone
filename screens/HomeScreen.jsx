@@ -30,7 +30,7 @@ const dispatch = useDispatch()
               fontSize: 18,
             },
           }}
-          onPRESS={(data, details = null) => {
+          onPress={(data, details = null) => {
              dispatch(
                setOrigin({
                location: details.geometry.location,
@@ -50,7 +50,7 @@ const dispatch = useDispatch()
           nearbyPlacesAPI="GooglePlacesSearch"
           debounce={400}
         />
-        
+
         <NavOptions />
       </View>
     </SafeAreaView>
