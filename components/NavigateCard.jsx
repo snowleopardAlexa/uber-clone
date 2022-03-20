@@ -1,17 +1,18 @@
-import { StyleSheet, Text, SafeAreaView, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { GOOGLE_MAPS_APIKEY } from '@env'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
+import tw from 'tailwind-react-native-classnames'
 
 const NavigateCard = () => {
   return (
     <SafeAreaView style={tw `bg-white flex-1`}>
-      <Text style={tw `text-center py-5 text-xl`}>Hello, Alexa!</Text>
+      <Text style={tw `text-center py-5 text-xl`}>Good Morning, Alexa!</Text>
       <View style={tw `border-t border-gray-200 flex-shrink`}>
         <View>
            <GooglePlacesAutocomplete 
-             style={toInputBoxStyles}
+             styles={toInputBoxStyles}
              placeholder="Where to?"
              nearbyPlacesAPI="GooglePlacesSearch"
              debounce={400}
