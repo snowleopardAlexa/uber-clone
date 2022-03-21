@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import MapView, { Marker } from 'react-native-maps'
 import { GOOGLE_MAPS_APIKEY } from '@env'
-import { selectOrigin, selectDestination } from '../slices/navSlice'
+import { selectOrigin, selectDestination, setTravelTimeInformation } from '../slices/navSlice'
 import { useSelector } from 'react-redux'
 import tw from 'tailwind-react-native-classnames'
 import MapViewDirections from 'react-native-maps-directions'
@@ -11,6 +11,7 @@ const Map = () => {
 const origin = useSelector(selectOrigin)
 const destination = useSelector(selectDestination)
 const mapRef = useRef(null)
+const dispatch = useDispatch()
 
 // apply markers to destination
 useEffect(() => {
@@ -31,7 +32,7 @@ useEffect(() => {
     &key=${GOOGLE_MAPS_APIKEY}`
     ).then((res) => res.json())
     .then((data) => {
-      console.log(data)
+      dispatch(setTravelTimeInformation(data.rows[0].elements[0]))
     })
   }
 
