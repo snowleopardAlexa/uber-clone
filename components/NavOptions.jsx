@@ -11,7 +11,7 @@ const data = [
     {
         id: "1",
         title: "Get a ride",
-        image: require('../assets/car.png'),
+        image: require('../assets/car-yellow.png'),
         screen: "MapScreen",
     },
     {
