@@ -12,6 +12,7 @@ const origin = useSelector(selectOrigin)
 const destination = useSelector(selectDestination)
 const mapRef = useRef(null)
 
+// apply markers to destination
 useEffect(() => {
   if (!origin || !destination) return;
   // zoom & fit to markers
@@ -19,6 +20,19 @@ useEffect(() => {
       edgePadding: { top: 50, right: 50, bottom: 50, left: 50 },
   })
 }, [origin, destination])
+
+// calculate travel time
+useEffect(() => {
+  if(!origin || !destination) return;
+
+  const getTravelTime = async() => {
+    const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?
+    units=imperial&origins=${origin.description}&destinations=${destination.description}
+    &key=${GOOGLE_MAPS_APIKEY}`
+  }
+
+  getTravelTime()
+}, [origin, destination, GOOGLE_MAPS_APIKEY])
 
   return (
     <MapView
