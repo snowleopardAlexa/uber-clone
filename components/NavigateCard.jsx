@@ -57,10 +57,10 @@ const NavigateCard = () => {
             <Text style={tw `text-white text-center`}>Rides</Text>
           </TouchableOpacity>
           <TouchableOpacity
+            onPress={() => navigation.navigate("EatsScreen")}
             style={tw `flex flex-row justify-between w-24 px-4 py-3 rounded-full`}
           >
             <Icon 
-              onPress={() => navigation.navigate("EatsScreen")}
               name="fast-food-outline" 
               type="ionicon" 
               color="black" 
