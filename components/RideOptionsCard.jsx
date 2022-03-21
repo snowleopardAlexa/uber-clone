@@ -1,4 +1,4 @@
-import { StyleSheet, Text, SafeAreaView, View, TouchableOpacity, FlatList } from 'react-native'
+import { StyleSheet, Text, SafeAreaView, View, TouchableOpacity, FlatList, Image } from 'react-native'
 import React from 'react'
 import tw from 'tailwind-react-native-classnames'
 import { Icon } from 'react-native-elements'
@@ -16,13 +16,13 @@ const data = [
     id: "Uber-XL-2",
     title: "Uber XL",
     multiplier: 1.2,
-    image: require('../assets/car.png'),
+    image: require('../assets/suv.png'),
   },
   {
     id: "Uber-LUX-3",
     title: "UberX",
     multiplier: 1.75,
-    image: require('../assets/car.png'),
+    image: require('../assets/limousine.png'),
   },
 ]
 
@@ -47,9 +47,21 @@ const RideOptionsCard = () => {
       </View>
       <FlatList data={data}
         keyExtractor={(item) => item.id}
-        renderItem={({item}) => (
-          <TouchableOpacity>
-            <Text>Car</Text>
+        renderItem={({item: { id, title, multiplier, image }, item }) => (
+          <TouchableOpacity style={tw `flex-row justify-between items-center px-10`}>
+            <Image
+              style={{
+                width: 100,
+                height: 100,
+                resizeMode: "contain",
+              }}
+              source={image}
+            />
+            <View style={tw `-ml-6`}>
+              <Text style={tw `text-xl font-semibold`}>{title}</Text>
+              <Text>Travel time...</Text>
+            </View>
+            <Text style={tw `text-xl`}>$44</Text>
           </TouchableOpacity>
         )}
       

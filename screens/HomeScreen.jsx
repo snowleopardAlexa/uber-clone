@@ -8,7 +8,6 @@ import { useDispatch } from 'react-redux'
 import { setDestination, setOrigin } from "../slices/navSlice"
 import NavFavourites from '../components/NavFavourites'
 
-
 const HomeScreen = () => {
 
 const dispatch = useDispatch()
