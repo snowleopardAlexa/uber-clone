@@ -10,19 +10,19 @@ const data = [
     id: "Uber-X-1",
     title: "UberX",
     multiplier: 1,
-    image: "",
+    image: require('../assets/car.png'),
   },
   {
     id: "Uber-XL-2",
     title: "Uber XL",
     multiplier: 1.2,
-    image: "",
+    image: require('../assets/car.png'),
   },
   {
     id: "Uber-LUX-3",
     title: "UberX",
     multiplier: 1.75,
-    image: "",
+    image: require('../assets/car.png'),
   },
 ]
 
@@ -45,8 +45,13 @@ const RideOptionsCard = () => {
         </TouchableOpacity>
         <Text style={tw `text-center py-5 text-xl`}>Select a Ride</Text>
       </View>
-      <FlatList 
-       
+      <FlatList data={data}
+        keyExtractor={(item) => item.id}
+        renderItem={({item}) => (
+          <TouchableOpacity>
+            <Text>Car</Text>
+          </TouchableOpacity>
+        )}
       
       />
     </SafeAreaView>
