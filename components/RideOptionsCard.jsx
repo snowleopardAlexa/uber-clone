@@ -28,6 +28,9 @@ const data = [
   },
 ]
 
+// calculate price
+const SURGE_CHARGE_RATE = 1.5
+
 
 const RideOptionsCard = () => {
 
@@ -39,16 +42,16 @@ const RideOptionsCard = () => {
     <SafeAreaView style={tw `bg-white flex-grow`}>
       <View>
         <TouchableOpacity 
-          onPress={() => navigation.goBack()}
-          style={tw `absolute top-3 left-5 p-3 rounded-full`}
-        >
-          <Icon 
-            name="chevron-left"
-            type="fontawesome"
-          />
-        </TouchableOpacity>
+          onPress={() => navigation.navigate("NavigateCard")}
+          style={tw `absolute top-3 left-5 z-50 p-3 rounded-full`}
+      >
+        <Icon 
+          name="chevron-left" 
+          type="fontawesome"
+        />
+      </TouchableOpacity>
         <Text style={tw `text-center py-5 text-xl`}>Select a Ride - 
-         {travelTimeInformation?.distance.text}
+        {/*{travelTimeInformation.distance.text} */} 
         </Text>
       </View>
       <FlatList data={data}
@@ -69,14 +72,24 @@ const RideOptionsCard = () => {
             />
             <View style={tw `-ml-6`}>
               <Text style={tw `text-xl font-semibold`}>{title}</Text>
-              <Text>Travel time...</Text>
+              <Text> {/*{travelTimeInformation.duration.text} */}  Travel Time</Text>
             </View>
-            <Text style={tw `text-xl`}>$44</Text>
+             {/* <Text style={tw `text-xl`}>
+              {new Intl.NumberFormat('en-us', {
+                style: 'currency',
+                currency: 'USD'
+              }).format(
+                (travelTimeInformation?.duration.value * 
+                  SURGE_CHARGE_RATE * 
+                  multiplier) / 
+                  100
+              )}
+            </Text> */ } 
           </TouchableOpacity>
         )}
       />
-      <View>
-        <TouchableOpacity disabled={!selected} style={tw `bg-black py-3 m-3 ${!selected && "bg-gray"}`}>
+      <View style={tw `mt-auto border-t border-gray-200`}>
+        <TouchableOpacity disabled={!selected} style={tw `bg-black py-3 m-3 ${!selected && "bg-gray-300"}`}>
           <Text style={tw `text-center text-white text-xl`}>Choose {selected?.title}</Text>
         </TouchableOpacity>
       </View>
