@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity  } from "react-native";
 import React from "react";
 import { GOOGLE_MAPS_APIKEY } from "@env";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
@@ -8,7 +8,6 @@ import { setDestination } from "../slices/navSlice";
 import { useNavigation } from "@react-navigation/native";
 import NavFavourites from "./NavFavourites";
 import { Icon } from "react-native-elements";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 const NavigateCard = () => {
   const dispatch = useDispatch();
