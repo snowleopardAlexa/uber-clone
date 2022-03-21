@@ -1,6 +1,5 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { GOOGLE_MAPS_APIKEY } from "@env";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import tw from "tailwind-react-native-classnames";
@@ -16,9 +15,9 @@ const NavigateCard = () => {
   const navigation = useNavigation();
 
   return (
-    <SafeAreaView style={tw`bg-white flex-1`}>
-      <Text style={tw`text-center py-5 text-xl`}>Good Morning, Alexa!</Text>
-      <View style={tw`border-t border-gray-200 flex-shrink`}>
+    <SafeAreaView style={tw `bg-white flex-1`}>
+      <Text style={tw `text-center py-5 text-xl`}>Good Morning, Alexa!</Text>
+      <View style={tw `border-t border-gray-200 flex-shrink`}>
         <View>
           <GooglePlacesAutocomplete
             styles={toInputBoxStyles}
@@ -47,6 +46,7 @@ const NavigateCard = () => {
         <NavFavourites />
         <View style={tw `flex-row bg-white justify-evenly py-2 mt-auto border-t border-gray-100`}>
           <TouchableOpacity
+            onPress={() => navigation.navigate("RideOptionsCard")}
             style={tw `flex flex-row justify-between bg-black w-24 px-4 py-3 rounded-full`}
           >
             <Icon 
@@ -55,7 +55,7 @@ const NavigateCard = () => {
               color="white" 
               size={16} 
             />
-            <Text style={tw`text-white text-center`}>Rides</Text>
+            <Text style={tw `text-white text-center`}>Rides</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={tw `flex flex-row justify-between w-24 px-4 py-3 rounded-full`}
