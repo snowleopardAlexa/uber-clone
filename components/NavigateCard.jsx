@@ -7,6 +7,7 @@ import tw from 'tailwind-react-native-classnames'
 import { useDispatch } from 'react-redux'
 import { setDestination } from '../slices/navSlice'
 import { useNavigation } from '@react-navigation/native'
+import NavFavourites from './NavFavourites'
 
 const NavigateCard = () => {
 
@@ -41,6 +42,7 @@ const navigation = useNavigation()
              debounce={400}
            />
         </View>
+        <NavFavourites />
       </View>
     </SafeAreaView>
   )
