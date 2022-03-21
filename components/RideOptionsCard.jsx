@@ -69,8 +69,12 @@ const RideOptionsCard = () => {
             <Text style={tw `text-xl`}>$44</Text>
           </TouchableOpacity>
         )}
-      
       />
+      <View>
+        <TouchableOpacity disabled={!selected} style={tw `bg-black py-3 m-3 ${!selected && "bg-gray"}`}>
+          <Text style={tw `text-center text-white text-xl`}>Choose {selected?.title}</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   )
 }
