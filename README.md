@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/snowleopardAlexa/linkedin-clone">
-    <img src="/assets/uber-logo.png" alt="Logo" width="80" height="80">
+    <img src="/assets/uber.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Uber Clone</h3>
